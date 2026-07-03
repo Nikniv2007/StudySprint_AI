@@ -44,5 +44,21 @@ export const STORAGE_KEYS = {
   quizResults: "quiz-results",
   plans: "study-plans",
   noteSummaries: "note-summaries",
+  focusActive: "focus-active",
+  theme: "theme",
   onboarded: "onboarded",
 } as const;
+
+/** Every persisted key, used by the reset helper. */
+export const ALL_KEYS = Object.values(STORAGE_KEYS);
+
+/**
+ * Wipe all StudySprint AI data from localStorage. The app re-seeds demo data
+ * on next load because collections fall back to their seed when empty.
+ */
+export function resetAllData(): void {
+  if (typeof window === "undefined") return;
+  ALL_KEYS.forEach((k) => {
+    if (k !== "theme") clearState(k);
+  });
+}

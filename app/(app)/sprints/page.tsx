@@ -15,6 +15,7 @@ import { DifficultyBadge } from "@/components/study/Badges";
 import { useToast } from "@/components/ui/Toast";
 import { useCollection } from "@/lib/storage/hooks";
 import { STORAGE_KEYS } from "@/lib/storage";
+import { setActiveSprint } from "@/lib/storage/store";
 import { generateStudySprint, type SprintInput } from "@/lib/ai/mock-ai";
 import { demoSubjects } from "@/lib/data/demo";
 import { formatMinutes, relativeDue } from "@/lib/utils/format";
@@ -118,6 +119,7 @@ export default function CreateSprintPage() {
   }
 
   function startFocus() {
+    if (result) setActiveSprint(result);
     toast({
       tone: "info",
       title: "Launching Focus Mode",
@@ -267,7 +269,7 @@ export default function CreateSprintPage() {
                     {result.breakdown.map((step, i) => (
                       <li
                         key={i}
-                        className="flex gap-3 rounded-xl border border-border bg-white/70 p-3"
+                        className="flex gap-3 rounded-xl border border-border bg-muted/40 p-3"
                       >
                         <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-xs font-bold text-brand-700">
                           {i + 1}
@@ -384,7 +386,14 @@ export default function CreateSprintPage() {
                   )}
                 </div>
                 <div className="mt-1 flex gap-2">
-                  <Button size="sm" className="flex-1" onClick={() => router.push("/focus")}>
+                  <Button
+                    size="sm"
+                    className="flex-1"
+                    onClick={() => {
+                      setActiveSprint(s);
+                      router.push("/focus");
+                    }}
+                  >
                     <Play className="h-4 w-4" />
                     Start
                   </Button>

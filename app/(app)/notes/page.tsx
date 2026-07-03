@@ -149,7 +149,7 @@ export default function NotesPage() {
                   <AISection title="Important terms" icon={<BookMarked className="h-4 w-4" />}>
                     <dl className="space-y-2">
                       {result.terms.map((t, i) => (
-                        <div key={i} className="rounded-xl border border-border bg-white/70 p-3">
+                        <div key={i} className="rounded-xl border border-border bg-muted/40 p-3">
                           <dt className="text-sm font-semibold">{t.term}</dt>
                           <dd className="text-sm text-muted-foreground">{t.definition}</dd>
                         </div>

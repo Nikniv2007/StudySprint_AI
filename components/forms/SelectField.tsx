@@ -36,7 +36,7 @@ export const SelectField = React.forwardRef<
           id={selectId}
           ref={ref}
           className={cn(
-            "flex h-11 w-full appearance-none rounded-xl border border-input bg-white px-3.5 pr-10 text-sm shadow-sm transition-colors",
+            "flex h-11 w-full appearance-none rounded-xl border border-input bg-card px-3.5 pr-10 text-sm shadow-sm transition-colors",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
             className
           )}

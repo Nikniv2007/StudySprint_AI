@@ -323,8 +323,18 @@ export const demoProfile: UserProfile = {
   name: "Alex Rivera",
   email: "alex@studysprint.ai",
   role: "college",
+  gradeLevel: "Sophomore",
+  schoolType: "University",
+  mainSubjects: ["Biology", "Math", "Chemistry"],
+  studyGoals: "Raise my Chemistry grade and stay ahead of exam deadlines.",
+  preferredStudyTime: "16:00",
+  dailyAvailabilityMinutes: 120,
   weeklyGoalMinutes: 600,
   streakDays: 6,
+  studyStyle: "mixed",
+  plannerStyle: "balanced",
+  reminderStyle: "motivational",
+  aiStrictness: "balanced",
 };
 
 /* --------------------------- Flashcards / quizzes ------------------------- */

@@ -14,11 +14,12 @@ export function AIOutput({ title, children, actions, className }: AIOutputProps)
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-2xl border border-violet-100 bg-gradient-to-br from-violet-50/60 via-white to-brand-50/40 shadow-soft animate-fade-in",
+        "overflow-hidden rounded-2xl border border-brand-200/50 bg-card shadow-soft animate-fade-in",
+        "bg-gradient-to-br from-brand-500/[0.04] to-electric-500/[0.06]",
         className
       )}
     >
-      <div className="flex items-center justify-between gap-3 border-b border-violet-100/70 px-5 py-3.5">
+      <div className="flex items-center justify-between gap-3 border-b border-border px-5 py-3.5">
         <div className="flex items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-gradient text-white shadow-soft">
             <Sparkles className="h-4 w-4" />

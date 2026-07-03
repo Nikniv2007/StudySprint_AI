@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { MobileNav } from "./MobileNav";
 import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Search, Bell, Zap } from "lucide-react";
 import { demoProfile } from "@/lib/data/demo";
 
@@ -21,7 +22,7 @@ export function Topbar() {
         <input
           type="search"
           placeholder="Search subjects, tasks, notes…"
-          className="h-10 w-full rounded-xl border border-input bg-muted/40 pl-9 pr-3 text-sm outline-none transition-colors focus:border-brand-300 focus:bg-white"
+          className="h-10 w-full rounded-xl border border-input bg-muted/40 pl-9 pr-3 text-sm outline-none transition-colors focus:border-brand-300 focus:bg-background"
         />
       </div>
 
@@ -32,6 +33,7 @@ export function Topbar() {
             Start Sprint
           </Button>
         </Link>
+        <ThemeToggle />
         <button
           className="relative inline-flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground"
           aria-label="Notifications"

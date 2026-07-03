@@ -64,7 +64,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
             <div
               key={t.id}
               className={cn(
-                "pointer-events-auto flex items-start gap-3 rounded-xl border bg-white p-4 shadow-glow animate-slide-in",
+                "pointer-events-auto flex items-start gap-3 rounded-xl border bg-card p-4 shadow-glow animate-slide-in",
                 toneStyles[t.tone]
               )}
             >

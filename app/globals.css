@@ -13,10 +13,31 @@
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 239 84% 67%;
+    --elevated: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 96%;
+    --card: 222 40% 12%;
+    --card-foreground: 210 40% 96%;
+    --muted: 222 28% 20%;
+    --muted-foreground: 215 20% 65%;
+    --border: 222 26% 22%;
+    --input: 222 26% 24%;
+    --ring: 239 84% 67%;
+    --elevated: 222 40% 15%;
   }
 
   * {
     border-color: hsl(var(--border));
+  }
+
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
   }
 
   body {
@@ -24,6 +45,7 @@
     color: hsl(var(--foreground));
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -49,6 +71,11 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Surface that reads as white in light mode, elevated panel in dark mode */
+  .surface {
+    background-color: hsl(var(--elevated));
+  }
 }
 
 /* Thin, subtle scrollbars in the app shell */
@@ -59,4 +86,26 @@
 .app-scroll::-webkit-scrollbar-thumb {
   background: hsl(var(--muted));
   border-radius: 999px;
+}
+
+/* Confetti celebration */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10vh) rotateZ(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) rotateZ(720deg);
+    opacity: 0;
+  }
+}
+.confetti-piece {
+  position: fixed;
+  top: 0;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  animation: confetti-fall linear forwards;
+  z-index: 200;
+  pointer-events: none;
 }

@@ -109,6 +109,14 @@ export interface StudySprint {
   reflectionPrompts: string[];
   createdAt: string;
   completed?: boolean;
+  // Populated when a sprint is finished in Focus Mode:
+  completedAt?: string;
+  focusRating?: number; // 1-5
+  taskCompleted?: boolean;
+  reflectionConfusing?: string;
+  reflectionReviewNext?: string;
+  reflectionNotes?: string;
+  quizScore?: number;
 }
 
 /* ------------------------------- Study plan ------------------------------- */
@@ -278,11 +286,27 @@ export interface WeeklyStudyPoint {
   minutes: number;
 }
 
+/* ------------------------- Personalization settings ----------------------- */
+export type StudyStyle = "visual" | "reading-writing" | "practice" | "mixed";
+export type ReminderStyle = "gentle" | "motivational" | "strict" | "minimal";
+export type AIStrictness = "encouraging" | "balanced" | "direct" | "strict-coach";
+
 /* ------------------------------- User profile ----------------------------- */
 export interface UserProfile {
   name: string;
   email: string;
   role: "high-school" | "college" | "self-learner";
+  gradeLevel: string;
+  schoolType: string;
+  mainSubjects: string[];
+  studyGoals: string;
+  preferredStudyTime: string; // e.g. "16:00"
+  dailyAvailabilityMinutes: number;
   weeklyGoalMinutes: number;
   streakDays: number;
+  // AI personalization
+  studyStyle: StudyStyle;
+  plannerStyle: PlannerStyle;
+  reminderStyle: ReminderStyle;
+  aiStrictness: AIStrictness;
 }
