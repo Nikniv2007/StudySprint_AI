@@ -36,8 +36,13 @@ export function clearState(key: string): void {
 export const STORAGE_KEYS = {
   assignments: "assignments",
   sprints: "sprints",
+  savedSprints: "saved-sprints",
   sessions: "sessions",
   profile: "profile",
   flashcards: "flashcards",
+  decks: "flashcard-decks",
+  quizResults: "quiz-results",
+  plans: "study-plans",
+  noteSummaries: "note-summaries",
   onboarded: "onboarded",
 } as const;

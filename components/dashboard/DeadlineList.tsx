@@ -5,9 +5,11 @@ import { subjectById } from "@/lib/data/demo";
 import type { Assignment } from "@/types";
 
 const statusLabel: Record<Assignment["status"], string> = {
-  todo: "Not started",
+  "not-started": "Not started",
   "in-progress": "In progress",
+  "almost-done": "Almost done",
   completed: "Completed",
+  "needs-review": "Needs review",
 };
 
 export function DeadlineList({ assignments }: { assignments: Assignment[] }) {

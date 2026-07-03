@@ -52,13 +52,34 @@ types/
   index.ts  # Shared domain types
 ```
 
-## Roadmap
+## Features
 
-Part 1 (this build) delivers the foundation: global layout, design system,
-reusable components, a polished landing page, a fully populated dashboard, and
-functional Focus Mode, Sprints, Assignments, Progress, History, and Settings
-pages. The AI Planner, Flashcard, Quiz, and Notes modules have wired
-placeholders ready for their feature builds.
+**Part 1 — Foundation:** global layout, design system, reusable components,
+polished landing page, populated dashboard, Focus Mode, Progress, History,
+and Settings.
+
+**Part 2 — Study tools (all functional, all persisted to localStorage):**
+
+- **Create Study Sprint** — generates a minute-by-minute sprint plan (goal,
+  breakdown, materials, reflection) from your subject, goal, length,
+  difficulty, study type, deadline, and confidence.
+- **AI Study Planner** — builds a prioritized daily schedule with a priority
+  explanation, catch-up plan, and study-balance analysis.
+- **Assignment & Exam Tracker** — full add / edit / delete / complete with an
+  AI priority algorithm (Critical → Low) based on due date, difficulty,
+  effort, status, and grade weight.
+- **Flashcard Generator** — parses notes into an interactive flip-card deck
+  with shuffle, know/review marking, weak-card review, and saved decks.
+- **Quiz Generator** — multiple-choice, true/false, short-answer, fill-blank,
+  or mixed; instant scoring, per-question explanations, weak-topic analysis,
+  and a recommended follow-up sprint.
+- **Notes Summarizer** — summary, key points, term definitions, likely exam
+  topics, practice questions, and a suggested study sprint.
+
+All AI logic lives in `lib/ai/mock-ai.ts` and is driven by real user inputs
+(deadline, difficulty, confidence, subject, study type, available time,
+status) so outputs vary intelligently. Persistence flows through
+`lib/storage/` (typed `useLocalStorage` / `useCollection` hooks).
 
 ## Connecting a real AI provider
 
