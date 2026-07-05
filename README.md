@@ -158,7 +158,7 @@ file for details.
 
 ## 👤 Author
 
-**Nirek Sharma**
+**Nikniv2007**
 
 ---
 
